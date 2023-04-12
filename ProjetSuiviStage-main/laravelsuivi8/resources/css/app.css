@@ -1,0 +1,501 @@
+/*-----------------------------------------------------------------------------------------*/
+
+/**
+Datatable attribut table
+ */
+.attributes-table {
+
+    margin-left: 50px;
+}
+
+.attributes-table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* contenu */
+.contenu{
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 12px;
+
+    width: 1134.57px;
+    height: 1092px;
+
+    background: #FFFFFF;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.activity-container {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-container > h2 {
+    font-size: 3rem;
+    /* todo : on peut surement utiliser un title de bootstrap */
+}
+
+.tabview-container {
+
+
+
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 30px;
+
+}
+
+.tabview-container .tabview-nav {
+    width: 25%;
+    /* background-color: #fbfbfb;
+     border: 1px solid #e0e0e0;*/
+    border-radius: 6px;
+    padding: 30px;
+
+    margin-right: 3%;
+
+    display: flex;
+    align-items: baseline;
+}
+
+.tabview-nav .timeline {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.tabview-nav .timeline .item {
+    flex: 1;
+    width: 100%;
+}
+
+.tabview-nav .timeline .item.valide .line {
+    border-color:#10b981;
+}
+.tabview-nav .timeline .item.valide .node .circle {
+    background: #10b981;
+}
+
+.tabview-nav .timeline .item.today .line {
+    border-color: #f97316;
+}
+.tabview-nav .timeline .item.today .node .circle {
+    background: #f97316;
+}
+
+.tabview-nav .timeline .item.retard .line {
+    border-color: #ef4444;
+}
+.tabview-nav .timeline .item.retard .node .circle {
+    background: #ef4444;
+}
+
+.tabview-nav .timeline .item .line {
+    position: relative;
+    display: block;
+    width: 100%;
+    border-left: 7px solid #cecece;
+    height: 100px;
+
+}
+
+.tabview-nav .timeline .item:last-of-type .line {
+    border-left-color: transparent;
+    height: 0px;
+}
+
+.tabview-nav .timeline .item .node {
+    position: absolute;
+    bottom: -10px;
+    left: -18px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+.tabview-nav .timeline .item .node .circle {
+    width: 28px;
+    height: 28px;
+    background: #cecece;
+    border-radius: 25px;
+
+}
+
+.tabview-nav .timeline .item .node .circle:after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    border-radius: 50%;
+    left: 6px;
+    top: 6px;
+
+}
+.tabview-nav .timeline .item.active .node .circle:after,
+.tabview-nav .timeline .item .node:hover .circle:after {
+    background: white;
+}
+
+.tabview-nav .timeline .item .node .details {
+    position: absolute;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabview-nav .timeline .item .node .details h5 {
+    margin: 0px;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.tabview-nav .timeline .item .node .details h6 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 5px 0px 0px;
+}
+
+.tabview-container .tabview-content {
+    width: 80%;
+
+}
+
+
+.tabview-container .tabview-content .tabview-tab {
+    display: none;
+
+
+    background-color: #fbfbfb;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 25px 38px;
+
+
+    box-shadow: 1px 1px 14px 0px #e0e0e0;
+    -webkit-box-shadow: 1px 1px 14px 0px #e0e0e0;
+    -moz-box-shadow: 1px 1px 14px 0px #e0e0e0;
+
+}
+
+.tabview-container .tabview-content .tabview-tab.active {
+    display: block;
+}
+.tabview-container .tabview-content .tabview-tab.tutorial {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.tabview-container .tabview-content .tabview-tab.tutorial.active {
+    display: flex;
+
+}
+
+.tabview-container .tabview-content .tabview-tab.tutorial > h5 {
+    font-weight: 500;
+}
+.tabview-container .tabview-content .tabview-tab > h3 {
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+
+.tabview-container .tabview-content .tabview-tab .deadline {
+    margin-top: 5px;
+    display: flex;
+
+    color: #333333;
+}
+
+.tabview-container .tabview-content .tabview-tab .deadline > span {
+    margin-right: 5px;
+}
+
+.etat.late,
+.tabview-container .tabview-content .tabview-tab.late .deadline .date {
+    font-weight: 700;
+    color: #ef4444;
+}
+
+.tabview-container .tabview-content .tabview-tab.late {
+    border-color: #ef4444;
+
+    box-shadow: 1px 1px 14px 0px #ef4444;
+    -webkit-box-shadow: 1px 1px 14px 0px #ef4444;
+    -moz-box-shadow: 1px 1px 14px 0px #ef4444;
+}
+
+.etat.today,
+.tabview-container .tabview-content .tabview-tab.today .deadline .date {
+    font-weight: 700;
+    color: #f97316;
+}
+
+.tabview-container .tabview-content .tabview-tab.today {
+    border-color: #f97316;
+
+    box-shadow: 1px 1px 14px 0px #f97316;
+    -webkit-box-shadow: 1px 1px 14px 0px #f97316;
+    -moz-box-shadow: 1px 1px 14px 0px #f97316;
+}
+
+.tabview-container .tabview-content .tabview-tab.validated .deadline .date {
+    font-weight: 700;
+    color: #10b981;
+}
+
+.tabview-container .tabview-content .tabview-tab.validated {
+    border-color: #10b981;
+
+    box-shadow: 1px 1px 14px 0px #10b981;
+    -webkit-box-shadow: 1px 1px 14px 0px #10b981;
+    -moz-box-shadow: 1px 1px 14px 0px #10b981;
+}
+
+
+.tabview-container .tabview-content .tabview-tab > p {
+
+}
+
+.tabview-container .tabview-content .tabview-tab > h5 {
+    font-size: 2rem;
+    color: #000000;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+}
+
+.tabview-container .tabview-content .tabview-tab .ressources {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.tabview-container .tabview-content .tabview-tab .ressources a:not(:last-of-type) {
+    margin-bottom: 3px;
+
+}
+
+.tabview-container .tabview-content .tabview-tab .validation .validation-form {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.tabview-container .tabview-content .tabview-tab .validation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.tabview-container .tabview-content .tabview-tab .validation .btn {
+
+}
+
+.tabview-container .tabview-content .tabview-tab .validation .validation-form .form-group {
+    display: flex;
+    flex-direction: column;
+    /* padding: 15px; */
+    /* margin: 0px 10px; */
+    width: 32%;
+}
+
+
+
+
+.tabview-container .tabview-content .tabview-tab .validation .validation-form .validation-field input:not([type=file]),
+.tabview-container .tabview-content .tabview-tab .validation .validation-form .validation-field textarea {
+    color: #333333;
+    background: none;
+    border: 1px solid #e0e0e0;
+    font-size: 1.3rem;
+    padding: 8px;
+
+}
+
+
+.tabview-container .tabview-content .tabview-tab .validation .validation-form .validation-field textarea {
+    text-align: justify;
+}
+
+.tabview-container .tabview-content .tabview-tab .validation .alert {
+    margin-top: 15px;
+    width: 100%;
+    display: none;
+}
+
+.tabview-container .tabview-content .tabview-tab .validation .alert.visible {
+    display: block;
+}
+
+/**
+Page listing suivi-x
+ */
+table.dataTable tr.dt-hasChild td.dt-control:before {
+    background-color: #f7b500;
+}
+table.dataTable td.dt-control:before {
+    background-color: #00b8de;
+}
+
+.form-select {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+
+    margin-bottom: 20px;
+}
+
+/**
+Attributs (détail d'une activité)
+ */
+.attributes-container{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px;
+
+    box-shadow: 1px 1px 14px 0px #e0e0e0;
+    -webkit-box-shadow: 1px 1px 14px 0px #e0e0e0;
+    -moz-box-shadow: 1px 1px 14px 0px #e0e0e0;
+}
+.attributes-container .see-more {
+    flex-direction: column;
+    border-top: hidden;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+.attributes-container.active .see-more {
+    display: flex;
+}
+
+.attributes-container .see-more h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.attributes-container  .see-more p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.attributes-container .btn-more {
+    background-color: #00b8de;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.attributes-container.active .btn-more {
+    background-color: #f7b500;
+
+}
+.btn-more:hover {
+    background-color: #2980b9;
+}
+.attributes-container .list {
+    display: flex;
+    justify-content: space-evenly;
+    /* background-color: #f9f9f9; */
+    /* border: 0.5px solid #ececec; */
+    /* border-radius: 5px; */
+    margin-bottom: 15px;
+    width: 100%;
+
+}
+
+.attributes-container .list h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.attributes-container .list p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 760px) {
+
+
+    .attributes-container .list {
+
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    .attributes-container .see-more {
+        padding: 0px;
+    }
+
+
+    .tabview-container {
+        flex-direction: column;
+    }
+
+    .tabview-container .tabview-nav,
+    .tabview-container .tabview-content {
+        width: 100%;
+    }
+
+    .tabview-container .tabview-content .tabview-tab .validation .validation-form {
+        flex-direction: column;
+    }
+
+    .tabview-container .tabview-content .tabview-tab .validation .validation-form .form-group {
+        width: 100%;
+    }
+
+    .dataTables_wrapper {
+        overflow: auto;
+    }
+}
